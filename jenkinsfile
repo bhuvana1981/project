@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    stages {
+        stage('Buid and deploy') {
+            parallel {
+                stage('Build On Windows') {
+                    agent {
+                        label "windows"
+                    }
+                    }
+                    
+                
+                stage('Deploy On Linux') {
+                    agent {
+                        label "linux"
+                    }
+                    
+                        }
+                    }
+                }
+            }
+            }
+        
+    
